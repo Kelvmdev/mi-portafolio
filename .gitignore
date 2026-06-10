@@ -28,5 +28,5 @@ pnpm-debug.log*
 .idea/
 
 # Artefactos de auditoría (Lighthouse/PSI)
-_lh_*.json
+_lh*.json
 _psi_*.json
