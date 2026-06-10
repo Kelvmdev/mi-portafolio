@@ -4,7 +4,12 @@
     "marca": "SOLE.",
     "descripcion": "Tienda full-stack con panel propio para cargar productos sin tocar código.",
     "metrica": "⚡ LCP 24s → 2.3s · PageSpeed 98",
-    "tags": ["Next.js", "Tailwind", "CMS", "Cloudinary"],
+    "tags": [
+      "Next.js",
+      "Tailwind",
+      "CMS",
+      "Cloudinary"
+    ],
     "imagen": "",
     "badge": "98 PSI",
     "urlVivo": "https://tienda-zapatos-gamma.vercel.app",
@@ -15,7 +20,11 @@
     "marca": "La Esquina",
     "descripcion": "Sitio con menú editable, mapa y formulario de contacto que llega al correo.",
     "metrica": "◆ CMS propio · SEO técnico",
-    "tags": ["Astro", "SSR", "CMS"],
+    "tags": [
+      "Astro",
+      "SSR",
+      "CMS"
+    ],
     "imagen": "",
     "badge": "CMS",
     "urlVivo": "https://la-esquina-astro.vercel.app",
@@ -26,7 +35,11 @@
     "marca": "Estudio",
     "descripcion": "Portafolio con panel para que el cliente suba sus propios trabajos.",
     "metrica": "◆ Panel de administración propio",
-    "tags": ["Astro", "SSR", "CMS"],
+    "tags": [
+      "Astro",
+      "SSR",
+      "CMS"
+    ],
     "imagen": "",
     "badge": "CMS",
     "urlVivo": "https://portafolio-disenador.vercel.app",
