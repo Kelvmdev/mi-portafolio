@@ -66,7 +66,7 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
 
     <!-- Panel de specs (FIRMA: el 98 cuenta al cargar) -->
     <aside
-      class="order-first rounded-2xl border border-line bg-linear-to-b from-ink-2 to-[#181420] p-6 shadow-[0_30px_60px_-30px_#000] md:order-none"
+      class="order-first rounded-2xl border border-line bg-linear-to-b from-ink-2 to-[#181420] p-6 shadow-[0_30px_60px_-30px_#000] md:order-0"
       aria-label={`Métricas reales del proyecto ${site.specProyecto}`}
     >
       <div class="flex items-center justify-between border-b border-line pb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-2">
@@ -257,23 +257,23 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
 
         <form data-form action={site.formspreeUrl} method="POST" class="flex flex-col">
           <div class="mb-4 flex flex-col gap-1.5">
-            <label for="nombre" class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">Nombre</label>
+            <label for="nombre" class="font-mono text-[11px] uppercase tracking-widest text-muted">Nombre</label>
             <input
-              id="nombre" name="nombre" type="text" required placeholder="Tu nombre"
+              id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre"
               class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
             />
           </div>
           <div class="mb-4 flex flex-col gap-1.5">
-            <label for="correo" class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">Correo</label>
+            <label for="correo" class="font-mono text-[11px] uppercase tracking-widest text-muted">Correo</label>
             <input
-              id="correo" name="email" type="email" required placeholder="tucorreo@ejemplo.com"
+              id="correo" name="email" type="email" required autocomplete="email" placeholder="tucorreo@ejemplo.com"
               class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
             />
           </div>
           <div class="mb-4 flex flex-col gap-1.5">
-            <label for="mensaje" class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">¿Qué necesitas?</label>
+            <label for="mensaje" class="font-mono text-[11px] uppercase tracking-widest text-muted">¿Qué necesitas?</label>
             <textarea
-              id="mensaje" name="mensaje" rows="4" required placeholder="Una landing, una tienda, un panel..."
+              id="mensaje" name="mensaje" rows="4" required autocomplete="off" placeholder="Una landing, una tienda, un panel..."
               class="resize-y rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
             ></textarea>
           </div>
