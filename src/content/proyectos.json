@@ -10,7 +10,7 @@
       "CMS",
       "Cloudinary"
     ],
-    "imagen": "",
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063680/nsjdnik0dsbewhsblqch.png",
     "badge": "98 PSI",
     "urlVivo": "https://tienda-zapatos-gamma.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/tienda-zapatos"
@@ -25,7 +25,7 @@
       "SSR",
       "CMS"
     ],
-    "imagen": "",
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063691/denofxig4vmt8tcm61fr.png",
     "badge": "CMS",
     "urlVivo": "https://la-esquina-astro.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/la-esquina-astro"
@@ -40,7 +40,7 @@
       "SSR",
       "CMS"
     ],
-    "imagen": "",
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063820/bzcrvyatzhxpgjoc7kdp.png",
     "badge": "CMS",
     "urlVivo": "https://portafolio-disenador.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/portafolio-disenador"
