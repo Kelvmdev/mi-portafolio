@@ -124,7 +124,7 @@ export default function PanelAdmin({ inicial }) {
             type="button"
             onClick={() => setTab(t)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition active:scale-95 ${
-              tab === t ? "bg-rosa text-white" : "border border-line text-muted hover:text-bone"
+              tab === t ? "bg-rosa-deep text-white" : "border border-line text-muted hover:text-bone"
             }`}
           >
             {t}
@@ -343,7 +343,7 @@ export default function PanelAdmin({ inicial }) {
           type="button"
           onClick={guardarTodo}
           disabled={guardando}
-          className="rounded-[11px] bg-rosa px-6 py-3 text-sm font-semibold text-white transition duration-150 hover:bg-[#ff5891] active:scale-95 disabled:opacity-60 disabled:active:scale-100"
+          className="rounded-[11px] bg-rosa-deep px-6 py-3 text-sm font-semibold text-white transition duration-150 hover:bg-[#ff5891] active:scale-95 disabled:opacity-60 disabled:active:scale-100"
         >
           {guardando ? "Guardando…" : "Guardar todo"}
         </button>

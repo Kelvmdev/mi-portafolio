@@ -14,7 +14,8 @@
   --color-bone: #f4f1f5;      /* texto principal */
   --color-muted: #9c95a4;     /* texto secundario */
   --color-muted-2: #6f6877;
-  --color-rosa: #ff3d7f;      /* ACENTO (con restricción) */
+  --color-rosa: #ff3d7f;      /* ACENTO (eyebrows, métricas, links, firma) */
+  --color-rosa-deep: #e11463; /* Fondo de botones/badge: blanco encima pasa AA (4.7:1) */
 
   /* Tipografía */
   --font-display: "Space Grotesk Variable", system-ui, sans-serif;
