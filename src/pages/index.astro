@@ -33,7 +33,7 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
         site.disponible && (
           <div class="mt-5">
             <span class="inline-flex items-center gap-2 rounded-full border border-[#2f3a30] bg-[#171c18] px-3 py-1 font-mono text-[11px] tracking-[0.08em] text-[#9be59b]">
-              <i class="h-2 w-2 rounded-full bg-[#6ee06e] shadow-[0_0_8px_#6ee06e] motion-safe:animate-pulse" />
+              <i aria-hidden="true" class="h-2 w-2 rounded-full bg-[#6ee06e] shadow-[0_0_8px_#6ee06e] motion-safe:animate-pulse" />
               {site.disponibleTexto}
             </span>
           </div>
@@ -69,17 +69,17 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
       class="order-first rounded-2xl border border-line bg-linear-to-b from-ink-2 to-[#181420] p-6 shadow-[0_30px_60px_-30px_#000] md:order-0"
       aria-label={`Métricas reales del proyecto ${site.specProyecto}`}
     >
-      <div class="flex items-center justify-between border-b border-line pb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-2">
+      <div class="flex items-center justify-between border-b border-line pb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
         <span>Último proyecto · {site.specProyecto}</span>
         <span class="flex items-center gap-1.5 text-rosa">
-          <i class="h-2 w-2 rounded-full bg-rosa shadow-[0_0_8px_var(--color-rosa)] motion-safe:animate-pulse"></i> en vivo
+          <i aria-hidden="true" class="h-2 w-2 rounded-full bg-rosa shadow-[0_0_8px_var(--color-rosa)] motion-safe:animate-pulse"></i> en vivo
         </span>
       </div>
 
       <div class="mt-4 flex items-baseline gap-2.5">
-        <div class="font-display text-[72px] font-bold leading-none" data-count={site.specScore}>0</div>
+        <div class="font-display text-[72px] font-bold leading-none tabular-nums" data-count={site.specScore}>0</div>
         <div>
-          <div class="font-mono text-sm text-muted-2">/ 100</div>
+          <div class="font-mono text-sm text-muted">/ 100</div>
           <div class="text-[13px] text-muted">PageSpeed móvil</div>
         </div>
       </div>
@@ -152,7 +152,7 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
         {
           stack.grupos.map((g) => (
             <div class="rounded-xl border border-line bg-ink-2 p-5">
-              <h4 class="mb-4 font-mono text-xs uppercase tracking-[0.12em] text-rosa">{g.titulo}</h4>
+              <h3 class="mb-4 font-mono text-xs uppercase tracking-[0.12em] text-rosa">{g.titulo}</h3>
               <ul class="flex flex-col gap-3">
                 {g.items.map((it) => (
                   <li class="flex items-center gap-2.5 text-[15px]">
@@ -185,9 +185,9 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
               ]}
             >
               <div class="font-mono text-[13px] font-bold text-rosa">{p.n}</div>
-              <h4 class="mt-2.5 mb-2 font-display text-lg font-bold">
-                {p.titulo}{p.sello && <span class="text-rosa"> ★</span>}
-              </h4>
+              <h3 class="mt-2.5 mb-2 font-display text-lg font-bold">
+                {p.titulo}{p.sello && <span aria-hidden="true" class="text-rosa"> ★</span>}
+              </h3>
               <p class="text-[13.5px] text-muted">{p.texto}</p>
             </div>
           ))
@@ -203,10 +203,10 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
         {
           faq.map((q) => (
             <div class="rounded-xl border border-line bg-ink-2 p-5">
-              <h4 class="flex gap-2.5 font-display text-base font-bold">
-                <span class="font-mono font-bold text-rosa">?</span>
+              <h3 class="flex gap-2.5 font-display text-base font-bold">
+                <span aria-hidden="true" class="font-mono font-bold text-rosa">?</span>
                 {q.pregunta}
-              </h4>
+              </h3>
               <p class="mt-2.5 text-[13.5px] text-muted">{q.respuesta}</p>
             </div>
           ))
@@ -244,13 +244,13 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
           </p>
           <div class="mt-6 flex flex-col gap-3 text-sm">
             <a href={`mailto:${site.correo}`} class="flex items-center gap-2.5 text-muted transition hover:text-bone">
-              <span>✉</span> <b class="font-medium text-bone">{site.correo}</b>
+              <span aria-hidden="true">✉</span> <b class="font-medium text-bone">{site.correo}</b>
             </a>
             <a href={wa} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-muted transition hover:text-bone">
-              <span>◎</span> <b class="font-medium text-bone">WhatsApp directo</b>
+              <span aria-hidden="true">◎</span> <b class="font-medium text-bone">WhatsApp directo</b>
             </a>
             <a href={site.github} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-muted transition hover:text-bone">
-              <span>⌥</span> <b class="font-medium text-bone">{site.github.replace("https://", "")}</b>
+              <span aria-hidden="true">⌥</span> <b class="font-medium text-bone">{site.github.replace("https://", "")}</b>
             </a>
           </div>
         </div>

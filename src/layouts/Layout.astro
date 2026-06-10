@@ -19,6 +19,17 @@ const {
 
 const ogImage = new URL("/og.png", Astro.site ?? "https://mi-portafolio.vercel.app").href;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+
+// Datos estructurados: quién es Kervin (Person) para buscadores
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.nombre,
+  jobTitle: site.rol,
+  email: `mailto:${site.correo}`,
+  url: Astro.site?.href,
+  sameAs: [site.github, site.x].filter(Boolean),
+};
 ---
 
 <!doctype html>
@@ -43,13 +54,15 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="min-h-screen overflow-x-hidden">
     {
       chrome && (
         <div
           aria-hidden="true"
-          class="fixed top-0 left-0 z-[60] h-[3px] w-0 bg-rosa shadow-[0_0_12px_var(--color-rosa)] animate-fill motion-reduce:w-full motion-reduce:animate-none"
+          class="fixed top-0 left-0 z-[60] h-[3px] w-full origin-left scale-x-0 bg-rosa shadow-[0_0_12px_var(--color-rosa)] animate-fill motion-reduce:scale-x-100 motion-reduce:animate-none"
         />
       )
     }

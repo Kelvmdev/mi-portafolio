@@ -21,13 +21,14 @@
   --font-body: "Inter Variable", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 
-  /* Firma: barra de velocidad que se llena al cargar (~0.55s) */
+  /* Firma: barra de velocidad que se llena al cargar (~0.55s).
+     Anima transform (compositado en GPU) en vez de width → sin reflow. */
   --animate-fill: fill 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes fill {
-  from { width: 0; }
-  to { width: 100%; }
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 html {
@@ -40,6 +41,15 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   line-height: 1.55;
+}
+
+/* Foco visible por teclado en todos los interactivos (accesibilidad) */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-rosa);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

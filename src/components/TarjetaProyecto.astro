@@ -38,7 +38,7 @@ const img = imagen ? imagenOptimizada(imagen, 600) : "";
       </span>
     )}
     {marca && !img && (
-      <h4 class="relative font-display text-2xl font-bold text-white/90">{marca}</h4>
+      <span aria-hidden="true" class="relative font-display text-2xl font-bold text-white/90">{marca}</span>
     )}
   </div>
 
