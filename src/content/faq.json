@@ -1,6 +1,18 @@
 [
-  { "pregunta": "¿Cuánto cuesta una página?", "respuesta": "Depende de lo que necesites. Cuéntame el proyecto y te paso un precio claro y cerrado, sin sorpresas." },
-  { "pregunta": "¿En cuánto tiempo la entregas?", "respuesta": "Una landing simple en pocos días; un sitio con panel toma un poco más. Te doy un plazo real desde el inicio." },
-  { "pregunta": "¿Trabajas con clientes de otros países?", "respuesta": "Sí. Trabajo en remoto y me coordino sin problema por correo o WhatsApp." },
-  { "pregunta": "¿Puedo editar el contenido yo mismo?", "respuesta": "Sí. Te puedo dejar un panel propio para que cambies textos, fotos y productos sin tocar código." }
+  {
+    "pregunta": "¿Cuánto cuesta una página?",
+    "respuesta": "Depende de lo que necesites. Cuéntame el proyecto y te paso un precio claro y cerrado, sin sorpresas."
+  },
+  {
+    "pregunta": "¿En cuánto tiempo la entregas?",
+    "respuesta": "Una landing simple en pocos días; un sitio con panel toma un poco más. Te doy un plazo real desde el inicio."
+  },
+  {
+    "pregunta": "¿Trabajas con clientes de otros países?",
+    "respuesta": "Sí. Trabajo en remoto y me coordino sin problema por correo o WhatsApp."
+  },
+  {
+    "pregunta": "¿Puedo editar el contenido yo mismo?",
+    "respuesta": "Sí. Te puedo dejar un panel propio para que cambies textos, fotos y productos sin tocar código."
+  }
 ]

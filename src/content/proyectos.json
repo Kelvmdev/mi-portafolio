@@ -4,8 +4,13 @@
     "marca": "SOLE.",
     "descripcion": "Tienda full-stack con panel propio para cargar productos sin tocar código.",
     "metrica": "⚡ LCP 24s → 2.3s · PageSpeed 98",
-    "tags": ["Next.js", "Tailwind", "CMS", "Cloudinary"],
-    "imagen": "",
+    "tags": [
+      "Next.js",
+      "Tailwind",
+      "CMS",
+      "Cloudinary"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063680/nsjdnik0dsbewhsblqch.png",
     "badge": "98 PSI",
     "urlVivo": "https://tienda-zapatos-gamma.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/tienda-zapatos"
@@ -15,8 +20,12 @@
     "marca": "La Esquina",
     "descripcion": "Sitio con menú editable, mapa y formulario de contacto que llega al correo.",
     "metrica": "◆ CMS propio · SEO técnico",
-    "tags": ["Astro", "SSR", "CMS"],
-    "imagen": "",
+    "tags": [
+      "Astro",
+      "SSR",
+      "CMS"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063691/denofxig4vmt8tcm61fr.png",
     "badge": "CMS",
     "urlVivo": "https://la-esquina-astro.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/la-esquina-astro"
@@ -26,8 +35,12 @@
     "marca": "Estudio",
     "descripcion": "Portafolio con panel para que el cliente suba sus propios trabajos.",
     "metrica": "◆ Panel de administración propio",
-    "tags": ["Astro", "SSR", "CMS"],
-    "imagen": "",
+    "tags": [
+      "Astro",
+      "SSR",
+      "CMS"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063820/bzcrvyatzhxpgjoc7kdp.png",
     "badge": "CMS",
     "urlVivo": "https://portafolio-disenador.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/portafolio-disenador"
