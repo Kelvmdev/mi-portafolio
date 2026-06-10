@@ -1,0 +1,17 @@
+{
+  "grupos": [
+    {
+      "titulo": "Frontend",
+      "items": ["HTML & CSS", "JavaScript", "Tailwind CSS", "Responsive 320→4K"]
+    },
+    {
+      "titulo": "Frameworks",
+      "items": ["Astro", "React", "Next.js (App Router)", "Full-stack ligero"]
+    },
+    {
+      "titulo": "Herramientas",
+      "items": ["Git & GitHub", "Vercel", "Cloudinary", "Formspree"]
+    }
+  ],
+  "nota": "Trabajo asistido con Claude Code para entregar rápido, limpio y a tiempo."
+}

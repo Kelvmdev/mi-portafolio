@@ -13,9 +13,13 @@ yarn-error.log*
 pnpm-debug.log*
 
 
-# environment variables
+# environment variables (NUNCA al repo: tokens, contraseñas)
 .env
-.env.production
+.env.*
+!.env.example
+
+# Vercel
+.vercel/
 
 # macOS-specific files
 .DS_Store

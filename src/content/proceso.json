@@ -1,0 +1,6 @@
+[
+  { "n": "01", "titulo": "Entiendo qué necesitas", "texto": "Definimos alcance y objetivo por escrito antes de empezar.", "sello": false },
+  { "n": "02", "titulo": "Defino la vibra", "texto": "Decido el diseño (colores, tipografía, estilo) antes de codear.", "sello": false },
+  { "n": "03", "titulo": "Construyo y optimizo", "texto": "Responsive de 320px a 4K, rápido y con buen SEO.", "sello": false },
+  { "n": "04", "titulo": "Entrego probado", "texto": "Reviso que todo funcione antes de pasártelo. Es mi sello.", "sello": true }
+]

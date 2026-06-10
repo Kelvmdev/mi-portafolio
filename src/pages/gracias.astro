@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../lib/content";
+---
+
+<Layout title={`¡Gracias! — ${site.nombre}`} description="Recibí tu mensaje. Te respondo pronto.">
+  <main class="mx-auto flex min-h-[70vh] max-w-[1180px] flex-col items-center justify-center px-[clamp(20px,5vw,48px)] py-20 text-center">
+    <span class="font-mono text-xs uppercase tracking-[0.22em] text-rosa">Mensaje recibido</span>
+    <h1 class="mt-4 font-display text-[clamp(40px,8vw,72px)] font-bold tracking-tight text-rosa">¡Gracias!</h1>
+    <p class="mt-4 max-w-[44ch] text-muted">
+      Recibí tu información correctamente. Te respondo pronto por correo o WhatsApp.
+    </p>
+    <a
+      href="/"
+      class="mt-8 inline-flex items-center gap-2 rounded-[11px] border border-line px-5 py-3 text-sm font-semibold text-bone transition duration-150 hover:border-muted-2 hover:bg-ink-2 active:scale-95"
+    >
+      ← Volver al inicio
+    </a>
+  </main>
+</Layout>

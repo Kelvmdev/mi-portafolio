@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../lib/content";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Oculta nav/footer públicos (panel /admin) */
+  chrome?: boolean;
+}
+
+const {
+  title = `${site.nombre} — ${site.rol}`,
+  description = site.tagline,
+  chrome = true,
+} = Astro.props;
+
+const ogImage = new URL("/og.png", Astro.site ?? "https://mi-portafolio.vercel.app").href;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    {canonical && <meta property="og:url" content={canonical} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body class="min-h-screen overflow-x-hidden">
+    {
+      chrome && (
+        <div
+          aria-hidden="true"
+          class="fixed top-0 left-0 z-[60] h-[3px] w-0 bg-rosa shadow-[0_0_12px_var(--color-rosa)] animate-fill motion-reduce:w-full motion-reduce:animate-none"
+        />
+      )
+    }
+    {chrome && <Navbar />}
+    <slot />
+    {chrome && <Footer />}
+  </body>
+</html>

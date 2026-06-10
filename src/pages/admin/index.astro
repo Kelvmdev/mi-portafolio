@@ -1,0 +1,62 @@
+---
+export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+import PanelAdmin from "../../components/PanelAdmin.jsx";
+import { haySesion } from "../../lib/auth";
+import { leerContenido } from "../../lib/github";
+
+const logueado = haySesion(Astro.cookies);
+const conError = Astro.url.searchParams.get("error") === "1";
+
+let contenido = null;
+let errorCarga = "";
+if (logueado) {
+  try {
+    contenido = await leerContenido();
+  } catch (e: any) {
+    errorCarga = e?.message ?? "No se pudo leer el contenido desde GitHub.";
+  }
+}
+---
+
+<Layout title="Panel · Kervin Martínez" chrome={false}>
+  {
+    !logueado ? (
+      <main class="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6">
+        <h1 class="font-display text-2xl font-bold">Panel de administración</h1>
+        <p class="mt-1 text-sm text-muted">Ingresa tu contraseña para editar el contenido.</p>
+        <form method="POST" action="/api/login" class="mt-6 flex flex-col gap-3">
+          <input
+            type="password"
+            name="password"
+            required
+            autocomplete="current-password"
+            placeholder="Contraseña"
+            class="rounded-[10px] border border-line bg-ink-2 px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
+          />
+          <button
+            type="submit"
+            class="rounded-[11px] bg-rosa px-5 py-3 text-sm font-semibold text-white transition duration-150 hover:bg-[#ff5891] active:scale-95"
+          >
+            Entrar
+          </button>
+          {conError && <p class="text-sm text-rosa">Contraseña incorrecta.</p>}
+        </form>
+        <a href="/" class="mt-6 text-center text-xs text-muted-2 transition hover:text-bone">← Volver al sitio</a>
+      </main>
+    ) : errorCarga ? (
+      <main class="mx-auto flex min-h-screen max-w-lg flex-col justify-center px-6 text-center">
+        <h1 class="font-display text-xl font-bold text-rosa">No se pudo cargar el contenido</h1>
+        <p class="mt-3 text-sm text-muted break-words">{errorCarga}</p>
+        <p class="mt-3 text-xs text-muted-2">
+          Revisa las variables de entorno (GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH) en .env.local y en Vercel.
+        </p>
+        <form method="POST" action="/api/logout" class="mt-6">
+          <button class="text-xs text-muted-2 underline transition hover:text-bone">Cerrar sesión</button>
+        </form>
+      </main>
+    ) : (
+      <PanelAdmin inicial={contenido} client:load />
+    )
+  }
+</Layout>

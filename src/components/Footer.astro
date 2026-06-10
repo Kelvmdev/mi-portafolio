@@ -1,0 +1,24 @@
+---
+import { site } from "../lib/content";
+const marca = site.nombre.split(" ")[0];
+const anio = 2026;
+---
+
+<footer class="mt-10 border-t border-line">
+  <div
+    class="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4 px-[clamp(20px,5vw,48px)] py-8 text-sm text-muted-2"
+  >
+    <div>
+      <div class="font-display text-base font-bold text-bone">
+        {marca}<span class="text-rosa">.</span>
+      </div>
+      <div class="mt-1.5">Desarrollador Frontend · sitios rápidos y probados.</div>
+    </div>
+    <div class="flex gap-5 font-mono text-xs">
+      <a href={site.github} target="_blank" rel="noopener noreferrer" class="transition hover:text-rosa">GITHUB</a>
+      {site.x && <a href={site.x} target="_blank" rel="noopener noreferrer" class="transition hover:text-rosa">X</a>}
+      <a href={`mailto:${site.correo}`} class="transition hover:text-rosa">EMAIL</a>
+    </div>
+    <div>© {anio} {site.nombre}</div>
+  </div>
+</footer>

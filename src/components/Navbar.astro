@@ -1,0 +1,58 @@
+---
+import { site } from "../lib/content";
+
+const enlaces = [
+  { href: "#sobre", txt: "Sobre mí" },
+  { href: "#trabajo", txt: "Trabajo" },
+  { href: "#stack", txt: "Stack" },
+  { href: "#faq", txt: "FAQ" },
+  { href: "#contacto", txt: "Contacto" },
+];
+const marca = site.nombre.split(" ")[0];
+---
+
+<nav class="sticky top-0 z-50 border-b border-line bg-ink/80 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-[1180px] items-center justify-between px-[clamp(20px,5vw,48px)]">
+    <a href="#" class="font-display text-lg font-bold tracking-tight">
+      {marca}<span class="text-rosa">.</span>
+    </a>
+
+    <!-- Desktop -->
+    <div class="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
+      {enlaces.map((e) => <a href={e.href} class="transition hover:text-bone">{e.txt}</a>)}
+    </div>
+
+    <!-- Hamburguesa móvil -->
+    <button
+      type="button"
+      data-burger
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      class="flex flex-col gap-1.5 transition active:scale-95 md:hidden"
+    >
+      <span class="block h-0.5 w-5 rounded bg-bone"></span>
+      <span class="block h-0.5 w-5 rounded bg-bone"></span>
+      <span class="block h-0.5 w-5 rounded bg-bone"></span>
+    </button>
+  </div>
+
+  <!-- Menú desplegable móvil -->
+  <div data-menu hidden class="border-t border-line bg-ink px-[clamp(20px,5vw,48px)] py-4 md:hidden">
+    <div class="flex flex-col gap-4 text-base font-medium text-muted">
+      {enlaces.map((e) => <a href={e.href} data-menu-link class="transition hover:text-bone">{e.txt}</a>)}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const burger = document.querySelector<HTMLButtonElement>("[data-burger]");
+  const menu = document.querySelector<HTMLElement>("[data-menu]");
+  const toggle = (open: boolean) => {
+    if (!menu || !burger) return;
+    menu.hidden = !open;
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  };
+  burger?.addEventListener("click", () => toggle(menu?.hidden ?? true));
+  document.querySelectorAll("[data-menu-link]").forEach((a) => a.addEventListener("click", () => toggle(false)));
+</script>

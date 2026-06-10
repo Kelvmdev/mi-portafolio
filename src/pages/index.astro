@@ -1,43 +1,340 @@
 ---
-import TarjetaTrabajo from '../components/TarjetaTrabajo.jsx';
-import { trabajos } from '../data/trabajos.js';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import TarjetaProyecto from "../components/TarjetaProyecto.astro";
+import { site, proyectos, stack, proceso, faq, testimonios } from "../lib/content";
+import { imagenOptimizada } from "../lib/img";
+import { waLink } from "../lib/whatsapp";
+
+const wa = waLink(site.whatsapp);
+const foto = site.foto ? imagenOptimizada(site.foto, 700) : "";
+const iniciales = site.nombre
+  .split(" ")
+  .map((p) => p[0])
+  .slice(0, 2)
+  .join("");
+const wrap = "mx-auto max-w-[1180px] px-[clamp(20px,5vw,48px)]";
+const sec = "py-[clamp(40px,7vw,76px)]";
+const eyebrow = "font-mono text-xs uppercase tracking-[0.2em] text-rosa";
+const secTitle = "mt-2.5 font-display text-[clamp(26px,4vw,40px)] font-bold tracking-tight";
+const secSub = "mt-2 max-w-[54ch] text-muted";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header class="bg-gray-900 text-white">
-  <div class="mx-auto max-w-5xl px-6 py-20 text-center">
-    <p class="text-sm uppercase tracking-widest text-gray-400">Desarrollador web freelance</p>
-    <h1 class="mt-3 text-4xl font-bold sm:text-5xl">Kervin Martínez</h1>
-    <p class="mx-auto mt-4 max-w-xl text-lg text-gray-300">
-      Diseño y construyo landing pages y sitios web rápidos con Astro, React y un toque de IA.
-    </p>
-    <div class="mt-8 flex justify-center gap-3">
-      <a href="#trabajos" class="rounded-lg bg-white px-5 py-2.5 font-medium text-gray-900 hover:bg-gray-200">
-        Ver mi trabajo
-      </a>
-      <a href="#contacto" class="rounded-lg border border-gray-500 px-5 py-2.5 font-medium hover:bg-gray-800">
-        Contáctame
-      </a>
+<Layout>
+  <!-- HERO -->
+  <header class={`${wrap} grid grid-cols-1 items-center gap-[clamp(28px,5vw,60px)] py-[clamp(40px,8vw,84px)] md:grid-cols-[1.25fr_0.9fr]`}>
+    <div>
+      <p class="font-mono text-xs uppercase tracking-[0.22em] text-rosa">{site.eyebrow}</p>
+      <h1 class="mt-3.5 mb-4 font-display text-[clamp(42px,7.5vw,80px)] font-bold leading-[0.98] tracking-[-0.03em]">
+        {site.heroTitulo}
+      </h1>
+      <p class="max-w-[34ch] text-[clamp(16px,2.2vw,20px)] text-muted">{site.tagline}</p>
+
+      {
+        site.disponible && (
+          <div class="mt-5">
+            <span class="inline-flex items-center gap-2 rounded-full border border-[#2f3a30] bg-[#171c18] px-3 py-1 font-mono text-[11px] tracking-[0.08em] text-[#9be59b]">
+              <i class="h-2 w-2 rounded-full bg-[#6ee06e] shadow-[0_0_8px_#6ee06e] motion-safe:animate-pulse" />
+              {site.disponibleTexto}
+            </span>
+          </div>
+        )
+      }
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a
+          href="#trabajo"
+          class="inline-flex items-center gap-2 rounded-xl bg-rosa px-5 py-3 text-sm font-semibold text-white transition duration-150 hover:bg-[#ff5891] active:scale-95"
+        >
+          Ver mi trabajo →
+        </a>
+        <a
+          href="#contacto"
+          class="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-3 text-sm font-semibold text-bone transition duration-150 hover:border-muted-2 hover:bg-ink-2 active:scale-95"
+        >
+          Contáctame
+        </a>
+        <a
+          href={wa}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl border border-[#2f3a30] bg-[#1f1c24] px-5 py-3 text-sm font-semibold text-[#9be59b] transition duration-150 hover:border-[#3f5a40] active:scale-95"
+        >
+          WhatsApp
+        </a>
+      </div>
     </div>
-  </div>
-</header>
-<main id="trabajos" class="mx-auto max-w-5xl p-6">
-  <h2 class="mb-4 text-2xl font-bold">Mis trabajos</h2>
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {trabajos.map((t) => (
-      <TarjetaTrabajo titulo={t.titulo} descripcion={t.descripcion} imagen={t.imagen} client:visible />
-    ))}
-  </div>
-</main>
-	</body>
-</html>
+
+    <!-- Panel de specs (FIRMA: el 98 cuenta al cargar) -->
+    <aside
+      class="order-first rounded-2xl border border-line bg-linear-to-b from-ink-2 to-[#181420] p-6 shadow-[0_30px_60px_-30px_#000] md:order-none"
+      aria-label={`Métricas reales del proyecto ${site.specProyecto}`}
+    >
+      <div class="flex items-center justify-between border-b border-line pb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-2">
+        <span>Último proyecto · {site.specProyecto}</span>
+        <span class="flex items-center gap-1.5 text-rosa">
+          <i class="h-2 w-2 rounded-full bg-rosa shadow-[0_0_8px_var(--color-rosa)] motion-safe:animate-pulse"></i> en vivo
+        </span>
+      </div>
+
+      <div class="mt-4 flex items-baseline gap-2.5">
+        <div class="font-display text-[72px] font-bold leading-none" data-count={site.specScore}>0</div>
+        <div>
+          <div class="font-mono text-sm text-muted-2">/ 100</div>
+          <div class="text-[13px] text-muted">PageSpeed móvil</div>
+        </div>
+      </div>
+
+      <div class="mt-5 flex flex-col font-mono text-[13px]">
+        <div class="flex items-center justify-between border-t border-line py-3">
+          <span class="text-muted">LCP</span>
+          <b class="font-medium">
+            <span class="text-rosa">{site.specLcp}</span>
+            <span class="ml-1.5 text-[11px] text-muted-2 line-through">{site.specLcpAntes}</span>
+          </b>
+        </div>
+        <div class="flex items-center justify-between border-t border-line py-3">
+          <span class="text-muted">Responsive</span><b class="font-medium">{site.specResponsive}</b>
+        </div>
+        <div class="flex items-center justify-between border-t border-line py-3">
+          <span class="text-muted">SEO</span><b class="font-medium">{site.specSeo}</b>
+        </div>
+        <div class="flex items-center justify-between border-t border-line py-3">
+          <span class="text-muted">Stack</span><b class="font-medium">{site.specStack}</b>
+        </div>
+      </div>
+    </aside>
+  </header>
+
+  <main>
+    <!-- SOBRE MÍ -->
+    <section id="sobre" class={`${wrap} ${sec}`}>
+      <p class={eyebrow}>Quién soy</p>
+      <h2 class={secTitle}>Sobre mí</h2>
+      <div class="mt-9 grid grid-cols-1 items-center gap-[clamp(28px,5vw,52px)] md:grid-cols-[0.7fr_1.3fr]">
+        <div
+          class="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-line bg-linear-to-br from-[#2a2330] to-[#161220]"
+        >
+          {
+            foto ? (
+              <img src={foto} alt={site.nombre} loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover" />
+            ) : (
+              <>
+                <span class="absolute font-display text-[clamp(56px,12vw,96px)] font-bold text-[#2f2838]">{iniciales}</span>
+                <span class="z-10 p-5 text-center font-mono text-xs text-muted-2">📸 Tu foto aquí<br />(clara, fondo neutro)</span>
+              </>
+            )
+          }
+        </div>
+        <div>
+          <h3 class="font-display text-[clamp(22px,3vw,30px)] font-bold tracking-tight">{site.sobreTitulo}</h3>
+          <p class="mt-3.5 max-w-[56ch] text-[15.5px] text-muted">{site.sobreTexto1}</p>
+          <p class="mt-3.5 max-w-[56ch] text-[15.5px] text-muted">{site.sobreTexto2}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRABAJO -->
+    <section id="trabajo" class={`${wrap} ${sec}`}>
+      <p class={eyebrow}>Selección</p>
+      <h2 class={secTitle}>Proyectos en producción</h2>
+      <p class={secSub}>Cada uno está en vivo. No son maquetas: funcionan, tienen su panel para editar contenido y están medidos.</p>
+      <div class="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {proyectos.map((p) => <TarjetaProyecto {...p} />)}
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class={`${wrap} ${sec}`}>
+      <p class={eyebrow}>Herramientas</p>
+      <h2 class={secTitle}>Lo que uso y domino</h2>
+      <p class={secSub}>Mi caja de herramientas para construir sitios modernos, rápidos y fáciles de mantener.</p>
+      <div class="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          stack.grupos.map((g) => (
+            <div class="rounded-xl border border-line bg-ink-2 p-5">
+              <h4 class="mb-4 font-mono text-xs uppercase tracking-[0.12em] text-rosa">{g.titulo}</h4>
+              <ul class="flex flex-col gap-3">
+                {g.items.map((it) => (
+                  <li class="flex items-center gap-2.5 text-[15px]">
+                    <span class="h-1.5 w-1.5 flex-none rounded-full bg-rosa" />
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-6 border-l-2 border-rosa pl-3.5 font-mono text-[13px] text-muted">
+        Trabajo asistido con <b class="text-bone">Claude Code</b> para entregar rápido, limpio y a tiempo.
+      </p>
+    </section>
+
+    <!-- CÓMO TRABAJO -->
+    <section id="proceso" class={`${wrap} ${sec}`}>
+      <p class={eyebrow}>Mi forma de trabajar</p>
+      <h2 class={secTitle}>Cómo trabajo</h2>
+      <p class={secSub}>Un proceso simple y sin sorpresas, de la idea a la entrega.</p>
+      <div class="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          proceso.map((p) => (
+            <div
+              class:list={[
+                "rounded-xl border bg-ink-2 px-5 py-6",
+                p.sello ? "border-rosa shadow-[0_0_0_1px_#ff3d7f22]" : "border-line",
+              ]}
+            >
+              <div class="font-mono text-[13px] font-bold text-rosa">{p.n}</div>
+              <h4 class="mt-2.5 mb-2 font-display text-lg font-bold">
+                {p.titulo}{p.sello && <span class="text-rosa"> ★</span>}
+              </h4>
+              <p class="text-[13.5px] text-muted">{p.texto}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class={`${wrap} ${sec}`}>
+      <p class={eyebrow}>Antes de escribir</p>
+      <h2 class={secTitle}>Preguntas frecuentes</h2>
+      <div class="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {
+          faq.map((q) => (
+            <div class="rounded-xl border border-line bg-ink-2 p-5">
+              <h4 class="flex gap-2.5 font-display text-base font-bold">
+                <span class="font-mono font-bold text-rosa">?</span>
+                {q.pregunta}
+              </h4>
+              <p class="mt-2.5 text-[13.5px] text-muted">{q.respuesta}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    {
+      testimonios.length > 0 && (
+        <section id="testimonios" class={`${wrap} ${sec}`}>
+          <p class={eyebrow}>Clientes</p>
+          <h2 class={secTitle}>Lo que dicen</h2>
+          <div class="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonios.map((t) => (
+              <figure class="rounded-xl border border-line bg-ink-2 p-5">
+                <blockquote class="text-[15px] text-bone">“{t.texto}”</blockquote>
+                <figcaption class="mt-4 font-mono text-xs text-muted">
+                  <b class="text-bone">{t.autor}</b> · {t.rol}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <!-- CONTACTO -->
+    <section id="contacto" class={`${wrap} ${sec}`}>
+      <div class="mt-9 grid grid-cols-1 items-start gap-[clamp(28px,4vw,48px)] rounded-2xl border border-line bg-ink-2 p-[clamp(28px,5vw,52px)] md:grid-cols-2">
+        <div>
+          <p class={eyebrow}>Hablemos</p>
+          <h3 class="mt-2.5 font-display text-[26px] font-bold tracking-tight">¿Necesitas una página o un panel?</h3>
+          <p class="mt-2.5 text-[14.5px] text-muted">
+            Cuéntame qué necesitas y te digo plazo y precio. Entrego todo probado y funcionando.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 text-sm">
+            <a href={`mailto:${site.correo}`} class="flex items-center gap-2.5 text-muted transition hover:text-bone">
+              <span>✉</span> <b class="font-medium text-bone">{site.correo}</b>
+            </a>
+            <a href={wa} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-muted transition hover:text-bone">
+              <span>◎</span> <b class="font-medium text-bone">WhatsApp directo</b>
+            </a>
+            <a href={site.github} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-muted transition hover:text-bone">
+              <span>⌥</span> <b class="font-medium text-bone">{site.github.replace("https://", "")}</b>
+            </a>
+          </div>
+        </div>
+
+        <form data-form action={site.formspreeUrl} method="POST" class="flex flex-col">
+          <div class="mb-4 flex flex-col gap-1.5">
+            <label for="nombre" class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">Nombre</label>
+            <input
+              id="nombre" name="nombre" type="text" required placeholder="Tu nombre"
+              class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
+            />
+          </div>
+          <div class="mb-4 flex flex-col gap-1.5">
+            <label for="correo" class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">Correo</label>
+            <input
+              id="correo" name="email" type="email" required placeholder="tucorreo@ejemplo.com"
+              class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
+            />
+          </div>
+          <div class="mb-4 flex flex-col gap-1.5">
+            <label for="mensaje" class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">¿Qué necesitas?</label>
+            <textarea
+              id="mensaje" name="mensaje" rows="4" required placeholder="Una landing, una tienda, un panel..."
+              class="resize-y rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="flex w-full items-center justify-center rounded-xl bg-rosa px-5 py-3 text-sm font-semibold text-white transition duration-150 hover:bg-[#ff5891] active:scale-95 disabled:opacity-70 disabled:active:scale-100"
+          >
+            <span data-label>Enviar mensaje</span>
+          </button>
+          <p data-status role="status" aria-live="polite" class="mt-3 hidden text-center text-[13px]"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  // FIRMA — conteo del "98" al cargar (respeta prefers-reduced-motion)
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll<HTMLElement>("[data-count]").forEach((el) => {
+    const target = Number(el.dataset.count) || 0;
+    if (reduce) { el.textContent = String(target); return; }
+    let cur = 0;
+    const step = () => {
+      cur += Math.ceil((target - cur) / 8);
+      el.textContent = String(cur);
+      if (cur < target) requestAnimationFrame(step);
+      else el.textContent = String(target);
+    };
+    setTimeout(() => requestAnimationFrame(step), 450);
+  });
+
+  // CONTACTO — envío AJAX a Formspree → /gracias
+  const form = document.querySelector<HTMLFormElement>("[data-form]");
+  const status = form?.querySelector<HTMLElement>("[data-status]");
+  const btn = form?.querySelector<HTMLButtonElement>("button[type=submit]");
+  const label = form?.querySelector<HTMLElement>("[data-label]");
+  const setStatus = (msg: string, err = false) => {
+    if (!status) return;
+    status.textContent = msg;
+    status.hidden = false;
+    status.classList.remove("hidden");
+    status.style.color = err ? "#ff6b6b" : "#9be59b";
+  };
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!form.action || form.action.includes("TU_ENDPOINT")) {
+      setStatus("Configura tu endpoint de Formspree en site.json.", true);
+      return;
+    }
+    if (btn) btn.disabled = true;
+    if (label) label.textContent = "Enviando…";
+    try {
+      const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (res.ok) { form.reset(); window.location.href = "/gracias"; }
+      else { setStatus("No se pudo enviar. Escríbeme por WhatsApp o correo.", true); }
+    } catch {
+      setStatus("Error de red. Escríbeme por WhatsApp o correo.", true);
+    } finally {
+      if (btn) btn.disabled = false;
+      if (label) label.textContent = "Enviar mensaje";
+    }
+  });
+</script>
