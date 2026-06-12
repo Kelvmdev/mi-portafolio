@@ -3,12 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import { site } from "../lib/content";
 ---
 
-<Layout title={`¡Gracias! — ${site.nombre}`} description="Recibí tu mensaje. Te respondo pronto." noindex>
+<Layout title={`Página no encontrada — ${site.nombre}`} description="La página que buscas no existe o se movió." noindex>
   <main id="contenido" tabindex="-1" class="mx-auto flex min-h-[70vh] max-w-[1180px] flex-col items-center justify-center px-[clamp(20px,5vw,48px)] py-20 text-center">
-    <span class="font-mono text-xs uppercase tracking-[0.22em] text-rosa">Mensaje recibido</span>
-    <h1 class="mt-4 font-display text-[clamp(40px,8vw,72px)] font-bold tracking-tight text-rosa">¡Gracias!</h1>
+    <span class="font-mono text-xs uppercase tracking-[0.22em] text-rosa">Error 404</span>
+    <h1 class="mt-4 font-display text-[clamp(40px,8vw,72px)] font-bold tracking-tight">Página no encontrada</h1>
     <p class="mt-4 max-w-[44ch] text-muted">
-      Recibí tu información correctamente. Te respondo pronto por correo o WhatsApp.
+      La página que buscas no existe o se movió. Volvamos a un lugar seguro.
     </p>
     <a
       href="/"

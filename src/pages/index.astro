@@ -20,6 +20,7 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
 ---
 
 <Layout>
+  <main id="contenido" tabindex="-1">
   <!-- HERO -->
   <header class={`${wrap} grid grid-cols-1 items-center gap-[clamp(28px,5vw,60px)] py-[clamp(40px,8vw,84px)] md:grid-cols-[1.25fr_0.9fr]`}>
     <div>
@@ -77,7 +78,7 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
       </div>
 
       <div class="mt-4 flex items-baseline gap-2.5">
-        <div class="font-display text-[72px] font-bold leading-none tabular-nums" data-count={site.specScore}>0</div>
+        <div class="font-display text-[72px] font-bold leading-none tabular-nums" data-count={site.specScore}>{site.specScore}</div>
         <div>
           <div class="font-mono text-sm text-muted">/ 100</div>
           <div class="text-[13px] text-muted">PageSpeed móvil</div>
@@ -105,7 +106,6 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
     </aside>
   </header>
 
-  <main>
     <!-- SOBRE MÍ -->
     <section id="sobre" class={`${wrap} ${sec}`}>
       <p class={eyebrow}>Quién soy</p>
@@ -165,9 +165,9 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
           ))
         }
       </div>
-      <p class="mt-6 border-l-2 border-rosa pl-3.5 font-mono text-[13px] text-muted">
-        Trabajo asistido con <b class="text-bone">Claude Code</b> para entregar rápido, limpio y a tiempo.
-      </p>
+      {stack.nota && (
+        <p class="mt-6 border-l-2 border-rosa pl-3.5 font-mono text-[13px] text-muted">{stack.nota}</p>
+      )}
     </section>
 
     <!-- CÓMO TRABAJO -->
@@ -295,8 +295,10 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.querySelectorAll<HTMLElement>("[data-count]").forEach((el) => {
     const target = Number(el.dataset.count) || 0;
+    // El DOM ya trae el valor final (SSR) para no-JS y crawlers; si reduce, lo dejamos.
     if (reduce) { el.textContent = String(target); return; }
     let cur = 0;
+    el.textContent = "0"; // con JS: arrancamos en 0 y contamos hasta el final
     const step = () => {
       cur += Math.ceil((target - cur) / 8);
       el.textContent = String(cur);

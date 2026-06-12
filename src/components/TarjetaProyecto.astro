@@ -18,7 +18,7 @@ const img = imagen ? imagenOptimizada(imagen, 600) : "";
 ---
 
 <article
-  class="group overflow-hidden rounded-xl border border-line bg-ink-2 transition duration-300 hover:-translate-y-1 hover:border-muted-2"
+  class="group overflow-hidden rounded-xl border border-line bg-ink-2 transition duration-300 hover:-translate-y-1 hover:border-muted-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
 >
   <div class="relative flex aspect-[2/1] items-end overflow-hidden bg-linear-to-br from-[#2a2330] to-[#171320] p-4">
     {
@@ -28,7 +28,7 @@ const img = imagen ? imagenOptimizada(imagen, 600) : "";
           alt={titulo}
           loading="lazy"
           decoding="async"
-          class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
         />
       )
     }
