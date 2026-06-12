@@ -12,6 +12,7 @@ const API = "https://api.github.com";
 // Archivos de contenido editables desde el panel.
 export const ARCHIVOS = [
   "site",
+  "secciones",
   "proyectos",
   "stack",
   "proceso",

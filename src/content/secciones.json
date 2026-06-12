@@ -1,0 +1,34 @@
+{
+  "sobre": {
+    "eyebrow": "Quién soy",
+    "titulo": "Sobre mí"
+  },
+  "trabajo": {
+    "eyebrow": "Selección",
+    "titulo": "Proyectos en producción",
+    "sub": "Cada uno está en vivo. No son maquetas: funcionan, tienen su panel para editar contenido y están medidos."
+  },
+  "stack": {
+    "eyebrow": "Herramientas",
+    "titulo": "Lo que uso y domino",
+    "sub": "Mi caja de herramientas para construir sitios modernos, rápidos y fáciles de mantener."
+  },
+  "proceso": {
+    "eyebrow": "Mi forma de trabajar",
+    "titulo": "Cómo trabajo",
+    "sub": "Un proceso simple y sin sorpresas, de la idea a la entrega."
+  },
+  "faq": {
+    "eyebrow": "Antes de escribir",
+    "titulo": "Preguntas frecuentes"
+  },
+  "testimonios": {
+    "eyebrow": "Clientes",
+    "titulo": "Lo que dicen"
+  },
+  "contacto": {
+    "eyebrow": "Hablemos",
+    "titulo": "¿Necesitas una página o un panel?",
+    "sub": "Cuéntame qué necesitas y te digo plazo y precio. Entrego todo probado y funcionando."
+  }
+}

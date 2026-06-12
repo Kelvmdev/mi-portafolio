@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Boton from "../components/Boton.astro";
 import { site } from "../lib/content";
 ---
 
@@ -10,11 +11,6 @@ import { site } from "../lib/content";
     <p class="mt-4 max-w-[44ch] text-muted">
       La página que buscas no existe o se movió. Volvamos a un lugar seguro.
     </p>
-    <a
-      href="/"
-      class="mt-8 inline-flex items-center gap-2 rounded-[11px] border border-line px-5 py-3 text-sm font-semibold text-bone transition duration-150 hover:border-muted-2 hover:bg-ink-2 active:scale-95"
-    >
-      ← Volver al inicio
-    </a>
+    <Boton href="/" variant="secundario" class="mt-8">← Volver al inicio</Boton>
   </main>
 </Layout>

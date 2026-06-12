@@ -1,0 +1,34 @@
+---
+// Botón reutilizable (manual §5.5). Renderiza <a> si recibe href, si no <button>.
+// Lleva el gesto active:scale por defecto. Variantes: primario | secundario | verde.
+interface Props {
+  variant?: "primario" | "secundario" | "verde";
+  href?: string;
+  type?: "button" | "submit";
+  class?: string;
+  [key: string]: any;
+}
+
+const { variant = "primario", href, type = "button", class: extra = "", ...rest } = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition duration-150 active:scale-95";
+
+const variantes: Record<string, string> = {
+  primario: "bg-rosa-deep text-white hover:bg-rosa-deep-hover",
+  secundario: "border border-line text-bone hover:border-muted-2 hover:bg-ink-2",
+  verde: "border border-verde-borde bg-verde-bg text-verde hover:border-verde-borde-hover",
+};
+---
+
+{
+  href ? (
+    <a href={href} class:list={[base, variantes[variant], extra]} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class:list={[base, variantes[variant], extra]} {...rest}>
+      <slot />
+    </button>
+  )
+}

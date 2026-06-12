@@ -26,6 +26,8 @@ const img = imagen ? imagenOptimizada(imagen, 600) : "";
         <img
           src={img}
           alt={titulo}
+          width="600"
+          height="300"
           loading="lazy"
           decoding="async"
           class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"

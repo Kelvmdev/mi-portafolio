@@ -1,6 +1,7 @@
 // Fuente de verdad del contenido público: los JSON del repo.
 // El CMS los edita vía GitHub API → commit → Vercel rebuildea → estas páginas se actualizan.
 import siteData from "../content/site.json";
+import seccionesData from "../content/secciones.json";
 import proyectosData from "../content/proyectos.json";
 import stackData from "../content/stack.json";
 import procesoData from "../content/proceso.json";
@@ -42,8 +43,23 @@ export interface Testimonio {
   autor: string;
   rol: string;
 }
+export interface SeccionTexto {
+  eyebrow: string;
+  titulo: string;
+  sub?: string;
+}
+export interface Secciones {
+  sobre: SeccionTexto;
+  trabajo: SeccionTexto;
+  stack: SeccionTexto;
+  proceso: SeccionTexto;
+  faq: SeccionTexto;
+  testimonios: SeccionTexto;
+  contacto: SeccionTexto;
+}
 
 export const site = siteData;
+export const secciones = seccionesData as Secciones;
 export const proyectos = proyectosData as Proyecto[];
 export const stack = stackData as Stack;
 export const proceso = procesoData as Paso[];

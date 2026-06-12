@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SubirImagen from "./SubirImagen.jsx";
 
-const TABS = ["Sitio", "Proyectos", "Stack", "Proceso", "FAQ", "Testimonios"];
+const TABS = ["Sitio", "Secciones", "Proyectos", "Stack", "Proceso", "FAQ", "Testimonios"];
 
 /* ---------- Primitivas de formulario ---------- */
 const baseInput =
@@ -78,6 +78,8 @@ export default function PanelAdmin({ inicial }) {
 
   const setClave = (clave, valor) => setData((d) => ({ ...d, [clave]: valor }));
   const setSite = (k, v) => setClave("site", { ...data.site, [k]: v });
+  const setSeccion = (sec, k, v) =>
+    setClave("secciones", { ...data.secciones, [sec]: { ...data.secciones[sec], [k]: v } });
   const setArr = (clave, i, k, v) =>
     setClave(clave, data[clave].map((it, idx) => (idx === i ? { ...it, [k]: v } : it)));
 
@@ -143,6 +145,7 @@ export default function PanelAdmin({ inicial }) {
             <div className="mt-3"><Texto label="Eyebrow (encabezado del hero)" value={s.eyebrow} onChange={(v) => setSite("eyebrow", v)} /></div>
             <div className="mt-3"><Area label="Titular del hero" value={s.heroTitulo} onChange={(v) => setSite("heroTitulo", v)} rows={2} /></div>
             <div className="mt-3"><Area label="Tagline" value={s.tagline} onChange={(v) => setSite("tagline", v)} /></div>
+            <div className="mt-3"><Texto label="Tagline del footer" value={s.footerTagline} onChange={(v) => setSite("footerTagline", v)} /></div>
           </div>
 
           <div className={card}>
@@ -179,6 +182,38 @@ export default function PanelAdmin({ inicial }) {
               <Texto label="Stack" value={s.specStack} onChange={(v) => setSite("specStack", v)} />
             </div>
           </div>
+        </div>
+      )}
+
+      {/* SECCIONES (eyebrows/títulos/subtítulos de la home) */}
+      {tab === "Secciones" && (
+        <div className="flex flex-col gap-4">
+          <p className="text-sm text-muted">Los encabezados de cada sección de la home. (El subtítulo solo aparece donde el diseño lo usa.)</p>
+          {[
+            ["sobre", "Sobre mí"],
+            ["trabajo", "Proyectos"],
+            ["stack", "Stack"],
+            ["proceso", "Proceso"],
+            ["faq", "FAQ"],
+            ["testimonios", "Testimonios"],
+            ["contacto", "Contacto"],
+          ].map(([clave, titulo]) => {
+            const sx = data.secciones?.[clave] || {};
+            return (
+              <div key={clave} className={card}>
+                <p className="mb-3 font-mono text-xs uppercase tracking-wider text-rosa">{titulo}</p>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <Texto label="Eyebrow" value={sx.eyebrow} onChange={(v) => setSeccion(clave, "eyebrow", v)} />
+                  <Texto label="Título" value={sx.titulo} onChange={(v) => setSeccion(clave, "titulo", v)} />
+                </div>
+                {"sub" in sx && (
+                  <div className="mt-3">
+                    <Area label="Subtítulo" value={sx.sub} onChange={(v) => setSeccion(clave, "sub", v)} rows={2} />
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
 
@@ -335,7 +370,7 @@ export default function PanelAdmin({ inicial }) {
       {/* Barra de guardado (sticky) */}
       <div className="sticky bottom-4 mt-8 flex flex-wrap items-center justify-between gap-3 rounded-[14px] border border-line bg-ink-2/95 p-4 backdrop-blur">
         {msg ? (
-          <span className={`text-sm ${msg.ok ? "text-[#9be59b]" : "text-rosa"}`}>{msg.txt}</span>
+          <span className={`text-sm ${msg.ok ? "text-verde" : "text-rosa"}`}>{msg.txt}</span>
         ) : (
           <span className="text-sm text-muted">Los cambios no se publican hasta que guardes.</span>
         )}
@@ -343,7 +378,7 @@ export default function PanelAdmin({ inicial }) {
           type="button"
           onClick={guardarTodo}
           disabled={guardando}
-          className="rounded-[11px] bg-rosa-deep px-6 py-3 text-sm font-semibold text-white transition duration-150 hover:bg-[#ff5891] active:scale-95 disabled:opacity-60 disabled:active:scale-100"
+          className="rounded-[11px] bg-rosa-deep px-6 py-3 text-sm font-semibold text-white transition duration-150 hover:bg-rosa-deep-hover active:scale-95 disabled:opacity-60 disabled:active:scale-100"
         >
           {guardando ? "Guardando…" : "Guardar todo"}
         </button>

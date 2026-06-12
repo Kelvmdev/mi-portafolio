@@ -27,10 +27,18 @@
   --color-surface: #211c27;   /* superficie elevada */
   --color-line: #2c2733;      /* bordes */
   --color-bone: #f4f1f5;      /* texto principal */
-  --color-muted: #9c95a4;     /* texto secundario */
-  --color-muted-2: #6f6877;
+  --color-muted: #9c95a4;     /* texto secundario (6.5:1 sobre ink) */
+  --color-muted-2: #8a8a8a;   /* texto terciario: 5.47:1 sobre ink (AA) */
   --color-rosa: #ff3d7f;      /* ACENTO (eyebrows, métricas, links, firma) */
-  --color-rosa-deep: #e11463; /* Fondo de botones/badge: blanco encima pasa AA (4.7:1) */
+  --color-rosa-deep: #e11463; /* Fondo de botón/badge: blanco encima = 4.69:1 (AA) */
+  --color-rosa-deep-hover: #c20f54; /* Hover del primario (oscurece): blanco = 6.0:1 (AA) */
+
+  /* Acento verde (disponibilidad + WhatsApp) — antes en hex sueltos */
+  --color-verde: #9be59b;          /* texto verde */
+  --color-verde-bg: #171c18;       /* fondo de pill/botón verde */
+  --color-verde-borde: #2f3a30;    /* borde */
+  --color-verde-borde-hover: #3f5a40;
+  --color-verde-dot: #6ee06e;      /* punto "en vivo" (más brillante) */
 
   /* Tipografía */
   --font-display: "Space Grotesk", system-ui, sans-serif;

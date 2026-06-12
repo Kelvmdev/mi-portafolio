@@ -28,6 +28,7 @@ const marca = site.nombre.split(" ")[0];
       data-burger
       aria-label="Abrir menú"
       aria-expanded="false"
+      aria-controls="menu-movil"
       class="flex flex-col gap-1.5 transition active:scale-95 md:hidden"
     >
       <span class="block h-0.5 w-5 rounded bg-bone"></span>
@@ -37,7 +38,7 @@ const marca = site.nombre.split(" ")[0];
   </div>
 
   <!-- Menú desplegable móvil -->
-  <div data-menu hidden class="border-t border-line bg-ink px-[clamp(20px,5vw,48px)] py-4 md:hidden">
+  <div id="menu-movil" data-menu hidden class="border-t border-line bg-ink px-[clamp(20px,5vw,48px)] py-4 md:hidden">
     <div class="flex flex-col gap-4 text-base font-medium text-muted">
       {enlaces.map((e) => <a href={e.href} data-menu-link class="transition hover:text-bone">{e.txt}</a>)}
     </div>
