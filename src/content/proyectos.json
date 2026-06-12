@@ -19,29 +19,29 @@
     "titulo": "La Esquina — Restaurante",
     "marca": "La Esquina",
     "descripcion": "Sitio con menú editable, mapa y formulario de contacto que llega al correo.",
-    "metrica": "◆ CMS propio · SEO técnico",
+    "metrica": "◆ CMS propio · PageSpeed 96",
     "tags": [
       "Astro",
       "SSR",
       "CMS"
     ],
     "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063691/denofxig4vmt8tcm61fr.png",
-    "badge": "CMS",
+    "badge": "96 PSI",
     "urlVivo": "https://la-esquina-astro.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/la-esquina-astro"
   },
   {
     "titulo": "Portafolio del diseñador",
     "marca": "Estudio",
-    "descripcion": "Portafolio con panel para que el cliente suba sus propios trabajos.",
-    "metrica": "◆ Panel de administración propio",
+    "descripcion": "Portafolio de diseñadora con concepto propio, CMS editable y 100/100/100/100 en PageSpeed.",
+    "metrica": "◆ Concepto propio · 100/100/100/100",
     "tags": [
       "Astro",
       "SSR",
       "CMS"
     ],
-    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781063820/bzcrvyatzhxpgjoc7kdp.png",
-    "badge": "CMS",
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781231677/tda3wyqaf6r810snhz9p.png",
+    "badge": "100 PSI",
     "urlVivo": "https://portafolio-disenador.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/portafolio-disenador"
   }
