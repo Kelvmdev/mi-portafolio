@@ -1,9 +1,24 @@
 @import "tailwindcss";
 
-/* Fuentes (3 roles): display, cuerpo, datos/métricas */
-@import "@fontsource-variable/space-grotesk";
-@import "@fontsource-variable/inter";
-@import "@fontsource-variable/jetbrains-mono";
+/* Fuentes self-host (sin @import a Google Fonts; render-blocking mínimo).
+   - Cuerpo (Inter): solo los pesos usados (400/500/600/700), vía @fontsource
+     (cada .css trae font-display: swap y solo descarga el subset latin en runtime).
+   - Display (Space Grotesk 700): @font-face propio apuntando a /public/fonts con
+     URL ESTABLE → permite <link rel="preload"> sin doble descarga. Archivo tomado
+     de @fontsource/space-grotesk (files/space-grotesk-latin-700-normal.woff2).
+   - Datos/métricas: mono del sistema (una familia menos que descargar). */
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-700.css";
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-latin-700.woff2") format("woff2");
+}
 
 @theme {
   /* Paleta — "Velocidad como identidad" */
@@ -18,9 +33,9 @@
   --color-rosa-deep: #e11463; /* Fondo de botones/badge: blanco encima pasa AA (4.7:1) */
 
   /* Tipografía */
-  --font-display: "Space Grotesk Variable", system-ui, sans-serif;
-  --font-body: "Inter Variable", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
 
   /* Firma: barra de velocidad que se llena al cargar (~0.55s).
      Anima transform (compositado en GPU) en vez de width → sin reflow. */
