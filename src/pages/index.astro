@@ -222,7 +222,7 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
       <div class="mt-9 grid grid-cols-1 items-start gap-[clamp(28px,4vw,48px)] rounded-2xl border border-line bg-ink-2 p-[clamp(28px,5vw,52px)] md:grid-cols-2">
         <div>
           <p class={eyebrow}>{secciones.contacto.eyebrow}</p>
-          <h3 class="mt-2.5 font-display text-[26px] font-bold tracking-tight">{secciones.contacto.titulo}</h3>
+          <h2 class={secTitle}>{secciones.contacto.titulo}</h2>
           <p class="mt-2.5 text-[14.5px] text-muted">{secciones.contacto.sub}</p>
           <div class="mt-6 flex flex-col gap-3 text-sm">
             <a href={`mailto:${site.correo}`} class="flex items-center gap-2.5 text-muted transition hover:text-bone">
@@ -242,21 +242,21 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
             <label for="nombre" class="font-mono text-[11px] uppercase tracking-widest text-muted">Nombre</label>
             <input
               id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre"
-              class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
+              class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none placeholder:text-muted-2 focus:border-rosa"
             />
           </div>
           <div class="mb-4 flex flex-col gap-1.5">
             <label for="correo" class="font-mono text-[11px] uppercase tracking-widest text-muted">Correo</label>
             <input
               id="correo" name="email" type="email" required autocomplete="email" placeholder="tucorreo@ejemplo.com"
-              class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
+              class="rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none placeholder:text-muted-2 focus:border-rosa"
             />
           </div>
           <div class="mb-4 flex flex-col gap-1.5">
             <label for="mensaje" class="font-mono text-[11px] uppercase tracking-widest text-muted">¿Qué necesitas?</label>
             <textarea
               id="mensaje" name="mensaje" rows="4" required autocomplete="off" placeholder="Una landing, una tienda, un panel..."
-              class="resize-y rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none focus:border-rosa"
+              class="resize-y rounded-lg border border-line bg-ink px-3.5 py-3 text-sm text-bone outline-none placeholder:text-muted-2 focus:border-rosa"
             ></textarea>
           </div>
           <Boton type="submit" class="w-full disabled:opacity-70 disabled:active:scale-100">

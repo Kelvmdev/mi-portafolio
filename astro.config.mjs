@@ -12,7 +12,11 @@ export default defineConfig({
   // con `export const prerender = false`. El adaptador habilita ese modo.
   site: 'https://mi-portafolio-eta-hazel.vercel.app',
   adapter: vercel(),
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    // Excluye /admin (Disallow en robots) y /gracias (noindex) del sitemap
+    sitemap({ filter: (page) => !page.includes('/admin') && !page.includes('/gracias') }),
+  ],
 
   vite: {
     plugins: [tailwindcss()]
