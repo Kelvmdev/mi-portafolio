@@ -175,8 +175,8 @@ export default function PanelAdmin({ inicial }) {
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <Texto label="Proyecto" value={s.specProyecto} onChange={(v) => setSite("specProyecto", v)} />
               <Texto label="Score (número que cuenta)" type="number" value={s.specScore} onChange={(v) => setSite("specScore", Number(v))} />
-              <Texto label="LCP" value={s.specLcp} onChange={(v) => setSite("specLcp", v)} />
-              <Texto label="LCP antes (tachado)" value={s.specLcpAntes} onChange={(v) => setSite("specLcpAntes", v)} />
+              <Texto label="URL en vivo" value={s.specUrlVivo} onChange={(v) => setSite("specUrlVivo", v)} />
+              <Texto label="Accesibilidad" value={s.specAccesibilidad} onChange={(v) => setSite("specAccesibilidad", v)} />
               <Texto label="Responsive" value={s.specResponsive} onChange={(v) => setSite("specResponsive", v)} />
               <Texto label="SEO" value={s.specSeo} onChange={(v) => setSite("specSeo", v)} />
               <Texto label="Stack" value={s.specStack} onChange={(v) => setSite("specStack", v)} />

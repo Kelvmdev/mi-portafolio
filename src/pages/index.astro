@@ -56,9 +56,9 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
     >
       <div class="flex items-center justify-between border-b border-line pb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
         <span>Último proyecto · {site.specProyecto}</span>
-        <span class="flex items-center gap-1.5 text-rosa">
-          <i aria-hidden="true" class="h-2 w-2 rounded-full bg-rosa shadow-[0_0_8px_var(--color-rosa)] motion-safe:animate-pulse"></i> en vivo
-        </span>
+        <a href={site.specUrlVivo} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-rosa transition hover:text-bone">
+          <i aria-hidden="true" class="h-2 w-2 rounded-full bg-rosa shadow-[0_0_8px_var(--color-rosa)] motion-safe:animate-pulse"></i> en vivo ↗
+        </a>
       </div>
 
       <div class="mt-4 flex items-baseline gap-2.5">
@@ -71,11 +71,7 @@ const secSub = "mt-2 max-w-[54ch] text-muted";
 
       <div class="mt-5 flex flex-col font-mono text-[13px]">
         <div class="flex items-center justify-between border-t border-line py-3">
-          <span class="text-muted">LCP</span>
-          <b class="font-medium">
-            <span class="text-rosa">{site.specLcp}</span>
-            <span class="ml-1.5 text-[11px] text-muted-2 line-through">{site.specLcpAntes}</span>
-          </b>
+          <span class="text-muted">Accesibilidad</span><b class="font-medium text-rosa">{site.specAccesibilidad}</b>
         </div>
         <div class="flex items-center justify-between border-t border-line py-3">
           <span class="text-muted">Responsive</span><b class="font-medium">{site.specResponsive}</b>
