@@ -1,5 +1,53 @@
 [
   {
+    "titulo": "Pulso — Monitor de mercado cripto",
+    "marca": "Pulso",
+    "descripcion": "Dashboard del mercado cripto en vivo: precios que voltean tipo tablero, dominancia y gráfico de evolución por moneda.",
+    "metrica": "📈 100/100/100/100 · datos en vivo + gráficos",
+    "tags": [
+      "Next.js",
+      "API CoinGecko",
+      "Gráficos SVG",
+      "Tailwind"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781750124/pw6uljgtafqveuz6u7uj.png",
+    "badge": "100 PSI",
+    "urlVivo": "https://pulso-bay-two.vercel.app",
+    "urlRepo": "https://github.com/Kelvmdev/pulso"
+  },
+  {
+    "titulo": "Flujo — Gestor de tareas Kanban",
+    "marca": "Flujo",
+    "descripcion": "App Kanban full-stack: cuentas, base de datos real y arrastrar-y-soltar accesible (también con teclado).",
+    "metrica": "🗂️ 99/100/100/100 · BD + auth + drag&drop",
+    "tags": [
+      "Next.js",
+      "Prisma + Neon",
+      "Auth",
+      "Drag & drop accesible"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781750047/zcbdul6ewjpjulmgyzaq.png",
+    "badge": "99 PSI",
+    "urlVivo": "https://flujo-gules.vercel.app",
+    "urlRepo": "https://github.com/Kelvmdev/flujo"
+  },
+  {
+    "titulo": "RODA — Tienda de llantas",
+    "marca": "RODA",
+    "descripcion": "E-commerce de llantas full-stack: buscador por medida, carrito, checkout por WhatsApp y panel de administración.",
+    "metrica": "🛒 98/100/100/100 · e-commerce full-stack",
+    "tags": [
+      "Next.js",
+      "Carrito",
+      "Checkout WhatsApp",
+      "Panel admin"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1781749964/ylphtgicopssnozwep1m.png",
+    "badge": "98 PSI",
+    "urlVivo": "https://roda-ecru.vercel.app",
+    "urlRepo": "https://github.com/Kelvmdev/Roda"
+  },
+  {
     "titulo": "SOLE — Tienda de zapatos",
     "marca": "SOLE.",
     "descripcion": "Tienda full-stack con panel propio para cargar productos sin tocar código.",
