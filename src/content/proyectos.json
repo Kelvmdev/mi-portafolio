@@ -16,6 +16,22 @@
     "urlRepo": "https://github.com/Kelvmdev/pulso"
   },
   {
+    "titulo": "Umbral — Inmobiliaria con asesor IA",
+    "marca": "Umbral",
+    "descripcion": " Sitio inmobiliario con un asesor de IA que responde solo con datos reales del catálogo: propiedades, precios y zonas. CMS propio para textos y fotos.",
+    "metrica": "🏡 95/100/100/100 · asesor IA + CMS",
+    "tags": [
+      "Next.js",
+      "Asesor IA",
+      "CMS",
+      "Cloudinary"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1782502426/lf1kori9rlqds1my7nka.jpg",
+    "badge": "95 PSI",
+    "urlVivo": "https://umbral-landing-pi.vercel.app",
+    "urlRepo": "https://github.com/Kelvmdev/umbral-landing"
+  },
+  {
     "titulo": "Flujo — Gestor de tareas Kanban",
     "marca": "Flujo",
     "descripcion": "App Kanban full-stack: cuentas, base de datos real y arrastrar-y-soltar accesible (también con teclado).",
@@ -92,5 +108,16 @@
     "badge": "100 PSI",
     "urlVivo": "https://portafolio-disenador.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/portafolio-disenador"
+  },
+  {
+    "titulo": "Nuevo proyecto",
+    "marca": "",
+    "descripcion": "",
+    "metrica": "",
+    "tags": [],
+    "imagen": "",
+    "badge": "",
+    "urlVivo": "",
+    "urlRepo": ""
   }
 ]
