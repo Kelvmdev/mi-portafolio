@@ -110,14 +110,19 @@
     "urlRepo": "https://github.com/Kelvmdev/portafolio-disenador"
   },
   {
-    "titulo": "Nuevo proyecto",
-    "marca": "",
-    "descripcion": "",
-    "metrica": "",
-    "tags": [],
-    "imagen": "",
-    "badge": "",
-    "urlVivo": "",
-    "urlRepo": ""
+    "titulo": "Lumen — Terminal de trading IA",
+    "marca": "Lumen",
+    "descripcion": " Landing de una terminal de trading con IA: fondo de terminal animado en SVG, formulario de contacto, SEO/GEO y accesibilidad AA.",
+    "metrica": " 98/100/100/100 · landing con identidad",
+    "tags": [
+      "Astro",
+      "SVG animado",
+      "SEO/GEO",
+      "Formspree"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1782502820/trhrwsieatj9isdrmz7w.jpg",
+    "badge": " 98 PSI",
+    "urlVivo": "https://lumen-landing-sigma.vercel.app",
+    "urlRepo": "https://github.com/Kelvmdev/lumen-landing"
   }
 ]
