@@ -32,6 +32,22 @@
     "urlRepo": "https://github.com/Kelvmdev/umbral-landing"
   },
   {
+    "titulo": "Lumen — Terminal de trading IA",
+    "marca": "Lumen",
+    "descripcion": " Landing de una terminal de trading con IA: fondo de terminal animado en SVG, formulario de contacto, SEO/GEO y accesibilidad AA.",
+    "metrica": " 98/100/100/100 · landing con identidad",
+    "tags": [
+      "Astro",
+      "SVG animado",
+      "SEO/GEO",
+      "Formspree"
+    ],
+    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1782502820/trhrwsieatj9isdrmz7w.jpg",
+    "badge": " 98 PSI",
+    "urlVivo": "https://lumen-landing-sigma.vercel.app",
+    "urlRepo": "https://github.com/Kelvmdev/lumen-landing"
+  },
+  {
     "titulo": "Flujo — Gestor de tareas Kanban",
     "marca": "Flujo",
     "descripcion": "App Kanban full-stack: cuentas, base de datos real y arrastrar-y-soltar accesible (también con teclado).",
@@ -108,21 +124,5 @@
     "badge": "100 PSI",
     "urlVivo": "https://portafolio-disenador.vercel.app",
     "urlRepo": "https://github.com/Kelvmdev/portafolio-disenador"
-  },
-  {
-    "titulo": "Lumen — Terminal de trading IA",
-    "marca": "Lumen",
-    "descripcion": " Landing de una terminal de trading con IA: fondo de terminal animado en SVG, formulario de contacto, SEO/GEO y accesibilidad AA.",
-    "metrica": " 98/100/100/100 · landing con identidad",
-    "tags": [
-      "Astro",
-      "SVG animado",
-      "SEO/GEO",
-      "Formspree"
-    ],
-    "imagen": "https://res.cloudinary.com/dw26ujhoo/image/upload/v1782502820/trhrwsieatj9isdrmz7w.jpg",
-    "badge": " 98 PSI",
-    "urlVivo": "https://lumen-landing-sigma.vercel.app",
-    "urlRepo": "https://github.com/Kelvmdev/lumen-landing"
   }
 ]
